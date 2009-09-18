@@ -1,0 +1,91 @@
+
+.left {
+	float: left;
+}
+/* Survey popups */
+
+#SurveyPopupHeader{background:#95c4e5;}
+#SurveyPopupHeader img{border:0;}
+
+#SurveyPopupContainer #content{font:bold 12px Arial,sans-serif;color:#84ad42;margin:12px;}
+
+/*Local Drop Down Popup*/
+#popupLocalDropDown{margin:0;}
+
+/* modal pop up */
+.modalPopup {
+	position: absolute;
+	top: 150px;
+	z-index: 100000;
+}
+.shadow img{display:block;}/*Gets rid of extra spacing in Strict doctypes*/
+.topShadow {
+	background: transparent url(http://images.theknot.com/2008/newmodal/modal_shadow_top.png) repeat-x scroll center top;
+}
+.topLeft,
+.topRight,
+.botLeft,
+.botRight{height:20px;width:20px;}
+.topLeft{background: transparent url(http://images.theknot.com/2008/newmodal/modal_shadow_corner_top_left.png) repeat-x scroll center top;}
+.topRight{background: transparent url(http://images.theknot.com/2008/newmodal/modal_shadow_corner_top_right.png) repeat-x scroll center top;}
+.botLeft{background: transparent url(http://images.theknot.com/2008/newmodal/modal_shadow_corner_bottom_left.png) repeat-x scroll center top;}
+.botRight{background: transparent url(http://images.theknot.com/2008/newmodal/modal_shadow_corner_bottom_right.png) repeat-x scroll center top;}
+.botShadow {
+	background: transparent url(http://images.theknot.com/2008/newmodal/modal_shadow_bottom.png) repeat-x scroll center bottom;
+}
+.shadowContainer, .topShadow, .botShadow {
+	width: auto;
+}
+.leftShadow {
+	background: transparent url(http://images.theknot.com/2008/newmodal/modal_shadow_left.png) repeat-y scroll left top;
+}
+.rightShadow {
+	background: transparent url(http://images.theknot.com/2008/newmodal/modal_shadow_right.png) repeat-y scroll right bottom;
+}
+.modalClose {
+	background-color: #e2e2e2;
+	height: 15px;
+	width: auto;
+}
+.modalClose img {
+	float: right;
+}
+.modalContainer {
+	padding: 10px;
+	background-color: #fff;
+}
+.modalHeader {
+	text-align: center;
+	padding-bottom: 10px;	
+}
+.modalHeader h2 {
+	margin: 0;
+	font-family: arial;
+	font-size: 20px;
+	color: #f58023;
+/*	border-bottom: 1px solid #dddddd;*/
+}
+.modalHeader p {
+	font-family: arial;
+	font-size: 14px;
+	margin: 0;
+	padding: 2px 0 5px 0;
+}
+.modalContent {
+	padding: 0 10px;
+}
+
+/*FROM ODB STAF*/
+#popupMask 
+{
+	display:none !important;
+	background-color:transparent !important;
+	/* This is now hidden/invisible, as the new modal design has no total browser window overlay */
+}
+#popupContainer {position: absolute;z-index: 201;top: 0px;left: 0px;display:none;padding: 0px;}
+#popupContainer table.modalPopup{position:static !important;top:auto !important;z-index:auto !important; /*Overriding the default modal settings to accommodate JS logic that dictates positioning.*/}
+#popupInner {border: 2px solid #666666;background-color: #ffffff;}
+#popupFrame {margin: 0px;width: 100%;height: 100%;position: relative;z-index: 202;}
+#popupTitleBar {background-color: #BBBBBB;color: #ffffff;height: 1.3em;font-weight: bold;padding: 9px 12px 8px 12px;border: 0px;position: relative;z-index: 203;}
+#popupTitle {float:left;font-size: 13px;line-height: 13px;}
+#popupControls {float: right;cursor: pointer;cursor: hand;}

@@ -1,0 +1,67 @@
+@import url("wilton_birdie.css"); /* Generic destination styles */
+
+body {
+	background: url(http://images.theknot.com/PWP/2008Redesign/Wilton_Birdie/imgWiltonBirdie_bgYellow.gif) repeat scroll center top;
+}
+#container {
+	background-color: #e9f7f6;
+}
+#inner_container {
+	background: url(http://images.theknot.com/PWP/2008Redesign/Wilton_Birdie/imgWiltonBirdie_Blue_headerImg.gif) no-repeat left top; 
+}
+/* book mark share*/
+#bookmark_share, .addthis, .addthis:hover {
+	color: #a29061;
+}
+#content {
+	background: url(http://images.theknot.com/PWP/2008Redesign/Wilton_Birdie/imgWiltonBirdie_Blue_bgNav.gif) no-repeat left bottom; 
+}
+#navLeft {
+	color: #d5a715;
+}
+#navLeft h2 {
+	color: #d5a715;
+}
+#navLeft h2 a:link, #navLeft h2 a:visited {
+	color: #d5a715;
+}
+a.onstate:link, a.onstate:visited  {
+	color: #d5a715 !important;
+}
+#navLeft a:link, #navLeft a:visited, .richText a:link, .richText a:visited{
+	color: #69554a;
+}
+#navLeft a:hover, .richText a:hover {
+	color: #69554a;
+}
+#header h1 {
+	color: #5f4a3e;
+}
+#text_date {
+	color: #674e3f;
+}
+#text_date .divider {
+	background-image: url(http://images.theknot.com/PWP/2008Redesign/Wilton_Birdie/imgWiltonBirdie_Blue_divider.gif);
+}
+.contentText {
+	color: #4b3427;
+}
+/* Registries & RSVP */
+h3 {
+	color: #d5a715;
+}
+#RegistryList ul {
+	border-bottom: 1px solid #ffffff;
+}
+#RegistryList ul a {
+	color: #4B3427;
+}
+#RegistryList ul li {
+	border-top: 1px solid #ffffff;
+}
+#formNoMatch {
+	border-top: 1px solid #ffffff;
+}
+
+.borderGeneric{border-top: 1px solid #ffffff;}
+.separator{background-image:url(http://images.theknot.com/pwp/2008Redesign/bg_dotted_rule_gray.gif);}
