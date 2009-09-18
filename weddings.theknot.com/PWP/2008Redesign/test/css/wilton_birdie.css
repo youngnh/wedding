@@ -1,0 +1,160 @@
+﻿/* This is the main stylesheet for this template. It is referenced by individual color themes. */
+@import url("/PWP/pwp2/Styles/main.css"); /* Main styles */
+
+body 
+{
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+#container 
+{
+	width: 750px;
+	margin-bottom: 0;
+	padding-bottom: 0;	
+}
+#inner_container 
+{
+	width: 750px;
+	float: left;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	height: auto;
+}
+#bookmark_share {
+	margin-left: 11px;
+	margin-top: 9px;
+	width: 140px;
+}
+#content 
+{
+	width: 750px;
+	float: left;
+	padding-top: 15px;
+	margin-bottom: 0;
+}
+#navLeft 
+{
+	width: 140px;
+	height: auto;
+	padding-bottom:30px;
+	text-align: right;
+	margin: 0;
+	font-family: Helvetica,Arial,sans-serif;
+	font-size: 13px;
+	text-transform: lowercase;
+}
+#navLeft h2 {
+	margin: 0;
+	padding: 0;
+	font-size: 13px;
+	font-weight: normal;
+	text-transform: lowercase;
+}
+#navLeft h2 a:link, #navLeft h2 a:visited 
+{
+	font-family: Helvetica,Arial,sans-serif;
+	font-size: 13px;
+	font-weight: normal;
+	text-decoration: none;
+}
+a.onstate:link, a.onstate:visited  
+{
+	font-family: Helvetica,Arial,sans-serif;
+	font-size: 13px;
+	font-weight: normal;
+	text-decoration: none;
+}
+#navLeft a:link, #navLeft a:visited 
+{
+	font-family: Helvetica,Arial,sans-serif;
+	font-size: 13px;
+	text-decoration: none;
+}
+#navLeft a:hover 
+{
+	font-family: Helvetica,Arial,sans-serif;
+	font-size: 13px;
+	text-decoration: underline;
+}
+#navLeft ul {
+	list-style-type: none;
+	list-style-image: none;
+	padding: 0 0 0 15px;
+	margin: 0;
+}
+#navLeft ul li {
+	padding-bottom: 14px;
+}
+#rightContent {
+	width: 520px;
+	padding-left: 28px;
+}
+#header {
+	margin: 127px 0 0 0;
+	text-align: center;
+}
+#header h1 
+{
+	font-family: Helvetica,Arial,sans-serif;
+	font-size: 20px;
+	font-weight: normal;
+	margin: 0;
+	padding-bottom: 9px;
+}
+h3 
+{
+	margin: 0;
+	padding: 0;
+	font:normal 18px/18px Arial,Helvetica,sans-serif;
+	display: block;
+}
+#bottom_bg {
+	display: none;
+}
+#text_date 
+{
+	text-align: center;
+	font-family: Helvetica,Arial,sans-serif;
+	font-weight: normal;
+	font-size: 14px;
+}
+#text_date .divider 
+{
+	background-repeat: no-repeat;
+	margin: 0 9px 0 9px;
+	width: 4px;
+	height: 4px;
+	vertical-align: middle;
+}
+.date, .countdown {
+	margin: 0;
+}
+.countdown {
+	width: 160px;
+}
+#main_content {
+	margin-top: 0;
+}
+.contentText 
+{
+	font-family: Helvetica,Arial,sans-serif;
+	font-size: 12px;
+	line-height: normal;
+	padding: 10px 0 20px 0;
+}
+.contentImg {
+	padding: 0;
+}
+.contentImg img {
+	padding: 0;
+}
+
+#bottomFooter {
+	margin: 0;
+	padding: 0;
+}
+/* Registries & RSVP */
+#divRSVPPage .contentText, #OurRegistries .contenttext {
+	padding-top: 0;
+}
