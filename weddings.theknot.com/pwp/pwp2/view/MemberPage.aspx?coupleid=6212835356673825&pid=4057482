@@ -70,7 +70,7 @@
             <div id="rightContent" class="left">
               <div id="main_content">
                 <div id="_ctl1__ctl0_divPageMainImage" class="contentImg">
-                  <img id="_ctl1__ctl0_imgPageMainImage" src="../../../../images.theknot.com/PWPimages/6212835356673825/ChurchInt_Sanctuary.JPG" border="0" />
+                  <img id="_ctl1__ctl0_imgPageMainImage" src="images/ChurchInt_Sanctuary.JPG" border="0" />
                 </div>
                 <div class="contentText">
                   <h3>Church Information</h3>

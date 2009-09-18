@@ -84,7 +84,7 @@
 			
 				<div class="thumb">
 					<a href="javascript:void(0);" id="_ctl1__ctl0_GuestPhotoAlbumViewer_rptrAlbumImages__ctl1_hlnkShowImage" onclick="$.TheKnot.pwp.MemberPage.PhotoAlbum.ShowImage(this, '6212835356673825', 602705);">
-						<img src='../../../../images.theknot.com/PWPimages/6212835356673825/PhotoAlbum/sml_IMGP7526.jpg' align="absmiddle" alt="" />
+						<img src='images/sml_IMGP7526.jpg' align="absmiddle" alt="" />
 					</a>
 					
 				</div>
@@ -95,7 +95,7 @@
 			
 				<div class="thumb">
 					<a href="javascript:void(0);" id="_ctl1__ctl0_GuestPhotoAlbumViewer_rptrAlbumImages__ctl2_hlnkShowImage" onclick="$.TheKnot.pwp.MemberPage.PhotoAlbum.ShowImage(this, '6212835356673825', 602704);">
-						<img src='../../../../images.theknot.com/PWPimages/6212835356673825/PhotoAlbum/sml_DH000010.jpg' align="absmiddle" alt="" />
+						<img src='images/sml_DH000010.jpg' align="absmiddle" alt="" />
 					</a>
 					
 				</div>
@@ -106,7 +106,7 @@
 			
 				<div class="thumb">
 					<a href="javascript:void(0);" id="_ctl1__ctl0_GuestPhotoAlbumViewer_rptrAlbumImages__ctl3_hlnkShowImage" onclick="$.TheKnot.pwp.MemberPage.PhotoAlbum.ShowImage(this, '6212835356673825', 602708);">
-						<img src='../../../../images.theknot.com/PWPimages/6212835356673825/PhotoAlbum/sml_IMGP6765.jpg' align="absmiddle" alt="" />
+						<img src='images/sml_IMGP6765.jpg' align="absmiddle" alt="" />
 					</a>
 					
 				</div>
@@ -117,7 +117,7 @@
 			
 				<div class="thumb">
 					<a href="javascript:void(0);" id="_ctl1__ctl0_GuestPhotoAlbumViewer_rptrAlbumImages__ctl4_hlnkShowImage" onclick="$.TheKnot.pwp.MemberPage.PhotoAlbum.ShowImage(this, '6212835356673825', 602706);">
-						<img src='../../../../images.theknot.com/PWPimages/6212835356673825/PhotoAlbum/sml_4210_579615873314_33300039_34547202_6631038_n.jpg' align="absmiddle" alt="" />
+						<img src='images/sml_4210_579615873314_33300039_34547202_6631038_n.jpg' align="absmiddle" alt="" />
 					</a>
 					
 				</div>
@@ -128,7 +128,7 @@
 			
 				<div class="thumb">
 					<a href="javascript:void(0);" id="_ctl1__ctl0_GuestPhotoAlbumViewer_rptrAlbumImages__ctl5_hlnkShowImage" onclick="$.TheKnot.pwp.MemberPage.PhotoAlbum.ShowImage(this, '6212835356673825', 602707);">
-						<img src='../../../../images.theknot.com/PWPimages/6212835356673825/PhotoAlbum/sml_3022_1113831883963_1171890034_30402623_7142398_n.jpg' align="absmiddle" alt="" />
+						<img src='images/sml_3022_1113831883963_1171890034_30402623_7142398_n.jpg' align="absmiddle" alt="" />
 					</a>
 					
 				</div>
@@ -139,7 +139,7 @@
 			
 				<div class="thumb">
 					<a href="javascript:void(0);" id="_ctl1__ctl0_GuestPhotoAlbumViewer_rptrAlbumImages__ctl6_hlnkShowImage" onclick="$.TheKnot.pwp.MemberPage.PhotoAlbum.ShowImage(this, '6212835356673825', 602709);">
-						<img src='../../../../images.theknot.com/PWPimages/6212835356673825/PhotoAlbum/sml_IMGP6764.jpg' align="absmiddle" alt="" />
+						<img src='images/sml_IMGP6764.jpg' align="absmiddle" alt="" />
 					</a>
 					
 				</div>
@@ -150,7 +150,7 @@
 			
 				<div class="thumb">
 					<a href="javascript:void(0);" id="_ctl1__ctl0_GuestPhotoAlbumViewer_rptrAlbumImages__ctl7_hlnkShowImage" onclick="$.TheKnot.pwp.MemberPage.PhotoAlbum.ShowImage(this, '6212835356673825', 602710);">
-						<img src='../../../../images.theknot.com/PWPimages/6212835356673825/PhotoAlbum/sml_IMGP6639.jpg' align="absmiddle" alt="" />
+						<img src='images/sml_IMGP6639.jpg' align="absmiddle" alt="" />
 					</a>
 					
 				</div>
@@ -161,7 +161,7 @@
 			
 				<div class="thumb">
 					<a href="javascript:void(0);" id="_ctl1__ctl0_GuestPhotoAlbumViewer_rptrAlbumImages__ctl8_hlnkShowImage" onclick="$.TheKnot.pwp.MemberPage.PhotoAlbum.ShowImage(this, '6212835356673825', 602711);">
-						<img src='../../../../images.theknot.com/PWPimages/6212835356673825/PhotoAlbum/sml_P1050087.jpg' align="absmiddle" alt="" />
+						<img src='images/sml_P1050087.jpg' align="absmiddle" alt="" />
 					</a>
 					
 				</div>
