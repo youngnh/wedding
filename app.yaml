@@ -13,5 +13,11 @@ handlers:
 - url: /js
   static_dir: js
 
+- url: /guestbook.html
+  script: guestbook.py
+
+- url: /signguestbook
+  script: guestbook.py
+
 - url: /
   static_dir: static

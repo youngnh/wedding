@@ -1,5 +1,5 @@
 ﻿/* This is the main stylesheet for this template. It is referenced by individual color themes. */
-@import url("/PWP/pwp2/Styles/main.css"); /* Main styles */
+@import url("main.css"); /* Main styles */
 
 body 
 {
