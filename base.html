@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Welcome - Nate and Paige's Wedding</title>
+    <title>{% block title %}Nate and Paige's Wedding{% endblock %}</title>
     <link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection"/>
     <link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print"/>
     <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
@@ -34,7 +34,7 @@
 	</ul>
       </div>
       <div id="content" class="span-14">
-	Content Goes Here
+	{% block content %}{% endblock %}
       </div>
       <div id="right" class="span-5 last">
 	<img src="images/treeright.png"/>

@@ -20,9 +20,4 @@ handlers:
   script: guestbook.py
 
 - url: /
-  static_files: static/welcome.html
-  upload: static/welcome.html
-
-- url: /(.*)
-  static_files: static/\1
-  upload: static/(.*)
+  script: welcome.py
