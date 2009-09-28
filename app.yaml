@@ -19,5 +19,5 @@ handlers:
 - url: /signguestbook
   script: guestbook.py
 
-- url: /
+- url: /(.*)
   script: welcome.py
