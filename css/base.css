@@ -5,6 +5,10 @@
 #navigation {
     list-style: none;
 }
+#navigation li {
+    position: relative;
+    right: -10px;
+}
 #subheader {
     text-align: center;
 }
