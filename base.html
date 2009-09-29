@@ -9,6 +9,7 @@
     <script type="text/javascript" src="js/prototype.js"></script>
     <script type="text/javascript" src="js/scriptaculous.js?load=effects,builder"></script>
     <script type="text/javascript" src="js/lightbox.js"></script>
+    <script type="text/javascript" src="js/countdown.js"></script>
     <style>
       {% block style %}
       {% endblock %}
@@ -39,7 +40,7 @@
 	  <h2 class="span-14 last">Paige Friedman & Nate Young</h2>
 	</div>
 	<div id="subheader2">
-	  <h4>June 12, 2010 - 258 days to go!</h4>
+	  <h4><span id="big_day">June 12, 2010</span> - <span id="days_to_go">258 days to go!</span></h4>
 	</div>
 	<div class="span-14">
 	  {% block content %}{% endblock %}
