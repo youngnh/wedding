@@ -1,0 +1,16 @@
+#left {
+    background: url(/images/treeleft.png);
+    height: 510px;
+}
+#navigation {
+    list-style: none;
+}
+#subheader {
+    text-align: center;
+}
+#subheader h2 {
+    margin-bottom: 0;
+}
+#subheader2 {
+    text-align: center;
+}

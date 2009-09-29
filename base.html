@@ -4,14 +4,10 @@
     <link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection"/>
     <link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print"/>
     <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+    <link rel="stylesheet" href="css/base.css" type="text/css"/>
     <style>
-      #left {
-        background: url(images/treeleft.png);
-        height: 510px;
-      }
-      #navigation {
-        list-style: none;
-      }
+      {% block style %}
+      {% endblock %}
     </style>
   </head>
   <body>
@@ -34,7 +30,15 @@
 	</ul>
       </div>
       <div id="content" class="span-14">
-	{% block content %}{% endblock %}
+	<div id="subheader" class="span-14 last">
+	  <h2 class="span-14 last">Paige Friedman & Nate Young</h2>
+	</div>
+	<div id="subheader2">
+	  <h4>June 12, 2010 - 258 days to go!</h4>
+	</div>
+	<div class="span-14">
+	  {% block content %}{% endblock %}
+	</div>
       </div>
       <div id="right" class="span-5 last">
 	<img src="images/treeright.png"/>

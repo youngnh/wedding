@@ -7,29 +7,28 @@
 
 <form action="/signguestbook" method="post">
   <label>Your name:</label>
-  <input name="author" type="text" maxlength="64" id="_ctl1__ctl0__ctl3_txtGuestName" style="display: block;"/>
+  <input name="author" type="text" maxlength="64" style="display: block;"/>
   <label style="display: block;">Message:</label>
-  <textarea name="message" rows="5" cols="40" id="_ctl1__ctl0__ctl3_txtMessage" style="display: block;"></textarea>
-  <input type="image" name="_ctl1:_ctl0:_ctl3:ibtnPostMessage" id="_ctl1__ctl0__ctl3_ibtnPostMessage" class="button" src="images/btnSubmitGeneric.gif" alt="Submit" language="javascript" border="0" />
+  <textarea name="message" rows="5" cols="40" style="display: block;"></textarea>
+  <input type="image" class="button" src="images/btnSubmitGeneric.gif" alt="Submit"/>
 </form>
 
-<div id="_ctl1__ctl0__ctl3_pnlGuestbookEntries" class="guest_book_entries borderGeneric">
-  {% for greeting in greetings %}
-  <div class="divGuestbookMsg">
-    <div id="divMessage">
-      {{ greeting.message|escape }}
+<hr class="prepend-top"/>
+{% for greeting in greetings %}
+<div class="span-14 last">
+  <div id="span-14 last">
+    {{ greeting.message|escape }}
+  </div>
+  <div class="span-14 last" style="text-align: right;">
+    from:
+    <span>
+      {{ greeting.author|escape }}
+    </span>
+    <div class="span-14 last">
+      {{ greeting.date|date:"n/j/Y g:i:s A" }}
     </div>
-    <div class="divFromLabelAndDate">
-      from: 
-      <span class="divFromLabel">
-	{{ greeting.author|escape }}
-      </span>
-      <div class="divFromDate">
-	{{ greeting.date|date:"n/j/Y g:i:s A" }}
-      </div>
-    </div><!--//divFromLabelAndDate-->
-  </div><!--//divGuestbookMsg-->
-  <div class="separator"><!-- --></div>
-  {% endfor %}			      
-</div>			    
+  </div>
+</div>
+<hr/>
+{% endfor %}
 {% endblock %}
