@@ -18,9 +18,21 @@ function countdown() {
 }
 
 document.observe("dom:loaded", function() {
+    // set the text for days until the wedding
     countdown();
+
+    // setup the menu rollover/rollout underlining
     $$('#navigation a').each(function(a) { 
 	a.observe("mouseover", menuRollover);
 	a.observe("mouseout", menuRollout);
     });
+
+    // populate the google maps
+    if($('map_canvas')) {
+	if(GBrowserIsCompatible()) {
+	    var map = new GMap2($('map_canvas'));
+	    map.setCenter(new GLatLng(37, -122), 13);
+	    map.setUIToDefault();
+	}
+    }
 });
