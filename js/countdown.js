@@ -17,19 +17,31 @@ function countdown() {
     $('days_to_go').update(daysToGo + " days to go!");
 }
 
-var getDirections;
-
-document.observe("dom:loaded", function() {
-    // set the text for days until the wedding
-    countdown();
-
-    // setup the menu rollover/rollout underlining
+function wireUpMenu() {
     $$('#navigation a').each(function(a) { 
 	a.observe("mouseover", menuRollover);
 	a.observe("mouseout", menuRollout);
     });
+}
 
-    // populate the google maps
+function getDirectionsInfoWindow(map) {
+    var deep = true;
+    var infoNode = $('directions_info_window').cloneNode(deep);
+    infoNode.id = "";
+    infoNode.show();
+
+    var inputs = infoNode.select('input');
+    var textField = inputs[0];
+    var button = inputs[1];
+    button.observe('click', function(event) {
+	var directions = new GDirections(map);
+	directions.load(textField.value + " to 505 Fountains Pkwy, Fairview Heights, IL 62208");
+    });
+
+    return infoNode;
+}
+
+function populateMap() {
     if($('map_canvas')) {
 	if(GBrowserIsCompatible()) {
 	    var map = new GMap2($('map_canvas'));
@@ -39,16 +51,20 @@ document.observe("dom:loaded", function() {
 	    var marker = new GMarker(holyTrinityLatLng);
 	    map.addOverlay(marker);
 	    GEvent.addListener(marker, "click", function() {
-		var infoNode = $('directions_info_window');
-		infoNode.remove();
-		infoNode.show();
+		var infoNode = getDirectionsInfoWindow(map);
 		marker.openInfoWindowHtml(infoNode);
 	    });
-
-	    getDirections = function() {
-		var directions = new GDirections(map);
-		directions.load("2035 Washington Ave, St. Louis, MO 63103 to 505 Fountains Pkwy, Fairview Heights, IL 62208");
-	    };
 	}
     }
+}
+
+document.observe("dom:loaded", function(event) {
+    // set the text for days until the wedding
+    countdown();
+
+    // setup the menu rollover/rollout underlining
+    wireUpMenu();
+
+    // populate the google maps
+    populateMap();
 });
