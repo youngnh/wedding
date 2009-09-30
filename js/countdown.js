@@ -34,7 +34,8 @@ function getDirectionsInfoWindow(map) {
     var textField = inputs[0];
     var button = inputs[1];
     button.observe('click', function(event) {
-	var directions = new GDirections(map);
+	var directionsDiv = $('directions_text');
+	var directions = new GDirections(map, directionsDiv);
 	directions.load(textField.value + " to 505 Fountains Pkwy, Fairview Heights, IL 62208");
     });
 
