@@ -17,6 +17,8 @@ function countdown() {
     $('days_to_go').update(daysToGo + " days to go!");
 }
 
+var getDirections;
+
 document.observe("dom:loaded", function() {
     // set the text for days until the wedding
     countdown();
@@ -31,8 +33,22 @@ document.observe("dom:loaded", function() {
     if($('map_canvas')) {
 	if(GBrowserIsCompatible()) {
 	    var map = new GMap2($('map_canvas'));
-	    map.setCenter(new GLatLng(37, -122), 13);
+	    var holyTrinityLatLng = new GLatLng(38.6040590, -89.9752430);
+	    map.setCenter(holyTrinityLatLng, 13);
 	    map.setUIToDefault();
+	    var marker = new GMarker(holyTrinityLatLng);
+	    map.addOverlay(marker);
+	    GEvent.addListener(marker, "click", function() {
+		var infoNode = $('directions_info_window');
+		infoNode.remove();
+		infoNode.show();
+		marker.openInfoWindowHtml(infoNode);
+	    });
+
+	    getDirections = function() {
+		var directions = new GDirections(map);
+		directions.load("2035 Washington Ave, St. Louis, MO 63103 to 505 Fountains Pkwy, Fairview Heights, IL 62208");
+	    };
 	}
     }
 });

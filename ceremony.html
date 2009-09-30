@@ -23,16 +23,26 @@
 <div class="span-14 last">
   <h3>Directions</h3>
   <p>
+    Click on the marker in the map below for directions.
     <div id="map_canvas" class="span-10 last"></div>
   </p>
+  <div id="directions_info_window" style="display: none">
+    <p>
+      <b>Holy Trinity Catholic Church</b>
+    </p>
+    <p>
+      Get directions to here:
+      <br/>
+      <input type="text"/><input type="submit" value="Go" onclick="getDirections()"/>
+    </p>
+  </div>
 </div>
 
-<div class="span-14 prepend-top last">
+<div class="span-14 prepend-top append-bottom last">
   <h3>Extras...</h3>
   <p>
     Holy Trinity Catholic Church has a great website if you want more information.&nbsp; For those with questions about attending a Catholic wedding, please don't hesitate to ask us!
   </p>
+  <a href="http://www.holytrinityil.org/">Holy Trinity Catholic Church Website</a>
 </div>
-
-<a href="http://www.holytrinityil.org/">Holy Trinity Catholic Church Website</a>
 {% endblock %}

@@ -1,0 +1,41 @@
+var location = {
+    "name": "505 Fountains Pkwy, Fairview Heights, IL 62208",
+    "Status": {
+	"code": 200,
+	"request": "geocode"
+    },
+    "Placemark": [ {
+	"id": "p1",
+	"address": "Fountains Pkwy, Fairview Heights, IL 62208, USA",
+	"AddressDetails": {
+	    "Accuracy" : 6,
+	    "Country" : {
+		"AdministrativeArea" : {
+		    "AdministrativeAreaName" : "IL",
+		    "Locality" : {
+			"LocalityName" : "Fairview Heights",
+			"PostalCode" : {
+			    "PostalCodeNumber" : "62208"
+			},
+			"Thoroughfare" : {
+			    "ThoroughfareName" : "Fountains Pkwy"
+			}
+		    }
+		},
+		"CountryName" : "USA",
+		"CountryNameCode" : "US"
+	    }
+	},
+	"ExtendedData": {
+	    "LatLonBox": {
+		"north": 38.6067521,
+		"south": 38.6004569,
+		"east": -89.9663100,
+		"west": -89.9851440
+	    }
+	},
+	"Point": {
+	    "coordinates": [ -89.9752430, 38.6040590, 0 ]
+	}
+    } ]
+};
