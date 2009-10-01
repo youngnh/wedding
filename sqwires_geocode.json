@@ -1,0 +1,41 @@
+var location = {
+    "name": "1415 S 18th St, St Louis, MO",
+    "Status": {
+	"code": 200,
+	"request": "geocode"
+    },
+    "Placemark": [ {
+	"id": "p1",
+	"address": "1415 S 18th St, St Louis, MO 63104, USA",
+	"AddressDetails": {
+	    "Accuracy" : 8,
+	    "Country" : {
+		"AdministrativeArea" : {
+		    "AdministrativeAreaName" : "MO",
+		    "Locality" : {
+			"LocalityName" : "St Louis",
+			"PostalCode" : {
+			    "PostalCodeNumber" : "63104"
+			},
+			"Thoroughfare" : {
+			    "ThoroughfareName" : "1415 S 18th St"
+			}
+		    }
+		},
+		"CountryName" : "USA",
+		"CountryNameCode" : "US"
+	    }
+	},
+	"ExtendedData": {
+	    "LatLonBox": {
+		"north": 38.6194196,
+		"south": 38.6131244,
+		"east": -90.2085474,
+		"west": -90.2148426
+	    }
+	},
+	"Point": {
+	    "coordinates": [ -90.2116950, 38.6162720, 0 ]
+	}
+    } ]
+};

@@ -2,6 +2,25 @@
 
 {% block title %}Reception - Nate and Paige's Wedding{% endblock %}
 
+{% block style %}
+#map_canvas {
+  height: 300px;
+}
+{% endblock %}
+
+{% block script %}
+document.observe("dom:loaded", function(event) {
+    // set the text for days until the wedding
+    countdown();
+
+    // setup the menu rollover/rollout underlining
+    wireUpMenu();
+
+    // populate the google maps
+    populateMap(38.6162720, -90.2116950, 14);
+});
+{% endblock %}
+
 {% block content %}
 <p>
   <img id="_ctl1__ctl0_imgPageMainImage" src="images/ph_sb_history_03.jpg" border="0" />
@@ -18,22 +37,38 @@
   Our reception will be held at Sqwires Annex in Lafeyette Square. The reception will be cocktail style (no stuffy assigned seating), and the food is a delicious mix of appetizers and smaller sized choices. We assure you there will be enough food to feel full, despite there being no sit down dinner. (Sometime soon we will add a menu to this section so you can see what will be offered.) Food will begin to be displayed at 7pm and the fun should last well into the night. We are so excited to share an amazing celebration with all those we love! Bring your dancing shoes...
 </p>
 
-<h3>Driving directions</h3>
-<p>
-  <a href="http://maps.google.com/maps?client=firefox-a&amp;rls=org.mozilla:en-US:official&amp;channel=s&amp;hl=en&amp;source=hp&amp;um=1&amp;ie=UTF-8&amp;q=sqwires&amp;near=Saint Louis, MO 63106&amp;fb=1&amp;split=1&amp;gl=us&amp;cid=0,0,7405924817677153841&amp;ei=WFegSur0JYSDnQeAsq32BA&amp;sa=X&amp;oi=local_result&amp;ct=image&amp;resnum=1">Click Here</a>
-</p>
+<div class="span-14 last">
+  <h3>Additional information</h3>
+  <p>
+    If you are interested in getting to the reception area early, Lafayette Square offers a lot of great options for you to enjoy as you wait for the evening activites to begin.&nbsp; Below, are a few of our favorites!
+  </p>
 
-<h3>Additional information</h3>
-<p>
-  If you are interested in getting to the reception area early, Lafayette Square offers a lot of great options for you to enjoy as you wait for the evening activites to begin.&nbsp; Below, are a few of our favorites!
-</p>
+  <ul>
+    <li>
+      The Chocolate Bar: Not only do they have a great outdoor patio, but they have the happiest chocolate martini you could possibly imagine.
+    </li>
+    <li>
+      Square One Brewery: A micro-brewery that eased Paige's fears before she traveled internationally by herself. This place will always hold a special place in our hearts...not to mention their great brewed-in-house beer selection.
+    </li>
+  </ul>
+</div>
 
-<ul>
-  <li>
-    The Chocolate Bar: Not only do they have a great outdoor patio, but they have the happiest chocolate martini you could possibly imagine.
-  </li>
-  <li>
-    Square One Brewery: A micro-brewery that eased Paige's fears before she traveled internationally by herself. This place will always hold a special place in our hearts...not to mention their great brewed-in-house beer selection.
-  </li>
-</ul>
+<div class="span-14 append-bottom last">
+  <h3>Directions</h3>
+  <p>
+    Click on the marker in the map below for directions.
+    <div id="map_canvas" class="span-10"></div>
+    <div id="directions_text" class="span-3 last"></div>
+  </p>
+  <div id="directions_info_window" style="display: none">
+    <p>
+      <b>Sqwires</b>
+    </p>
+    <p>
+      Get directions to here:
+      <br/>
+      <input type="text"/><input type="submit" value="Go"/>
+    </p>
+  </div>
+</div>
 {% endblock %}

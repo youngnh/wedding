@@ -42,12 +42,12 @@ function getDirectionsInfoWindow(map) {
     return infoNode;
 }
 
-function populateMap() {
+function populateMap(lat, lng, zoom) {
     if($('map_canvas')) {
 	if(GBrowserIsCompatible()) {
 	    var map = new GMap2($('map_canvas'));
-	    var holyTrinityLatLng = new GLatLng(38.6040590, -89.9752430);
-	    map.setCenter(holyTrinityLatLng, 13);
+	    var holyTrinityLatLng = new GLatLng(lat, lng);
+	    map.setCenter(holyTrinityLatLng, zoom);
 	    map.setUIToDefault();
 	    var marker = new GMarker(holyTrinityLatLng);
 	    map.addOverlay(marker);
@@ -58,14 +58,3 @@ function populateMap() {
 	}
     }
 }
-
-document.observe("dom:loaded", function(event) {
-    // set the text for days until the wedding
-    countdown();
-
-    // setup the menu rollover/rollout underlining
-    wireUpMenu();
-
-    // populate the google maps
-    populateMap();
-});
