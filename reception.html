@@ -9,16 +9,8 @@
 {% endblock %}
 
 {% block script %}
-document.observe("dom:loaded", function(event) {
-    // set the text for days until the wedding
-    countdown();
-
-    // setup the menu rollover/rollout underlining
-    wireUpMenu();
-
     // populate the google maps
     populateMap(38.6162720, -90.2116950, 14);
-});
 {% endblock %}
 
 {% block content %}
