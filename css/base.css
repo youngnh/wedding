@@ -1,3 +1,7 @@
+body {
+    background-color: #E1FFBB;
+}
+
 #left {
     background: url(/images/treeleft.png);
     height: 510px;
