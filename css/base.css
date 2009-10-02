@@ -1,17 +1,8 @@
 body {
-    background-color: #E1FFBB;
-}
-
-#left {
-    background: url(/images/treeleft.png);
-    height: 510px;
+    background: #E1FFBB url(/images/tree.png) no-repeat;    
 }
 #navigation {
     list-style: none;
-}
-#navigation li {
-    position: relative;
-    right: -10px;
 }
 #subheader {
     text-align: center;
