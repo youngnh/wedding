@@ -35,5 +35,7 @@ skip_files:
 - ^(.*/)?.*\.bak$
 - ^(.*/)?.*\.xcf$
 - ^(.*/)?.*\.json$
-- maps_api_key
+- ^(.*/)?.*/maps/.*
+- ^(.*/)?.*/css/blueprint/src/.*
+- ^(.*/)?.*/images/gimp/.*
 - todo
