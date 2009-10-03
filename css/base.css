@@ -5,8 +5,91 @@ body {
     list-style: none;
 }
 #navigation li {
+    width: 130px;
+    height: 34px;
     position: relative;
+    top: -70px;
     right: -10px;
+}
+#navigation li a {
+    visibility: hidden;
+}
+#welcome {
+    background: url(/images/welcome.png) no-repeat;
+}
+#welcome:hover{
+    cursor: pointer;
+    background: url(/images/welcome_u.png) no-repeat;
+}
+#aboutus {
+    background: url(/images/aboutus.png) no-repeat;
+}
+#aboutus:hover {
+    cursor: pointer;
+    background: url(/images/aboutus_u.png) no-repeat;
+}
+#ourproposal {
+    background: url(/images/ourproposal.png) no-repeat;
+}
+#ourproposal:hover {
+    cursor: pointer;
+    background: url(/images/ourproposal_u.png) no-repeat;
+}
+#ceremony {
+    background: url(/images/ceremony.png) no-repeat;
+}
+#ceremony:hover {
+    cursor: pointer;
+    background: url(/images/ceremony_u.png) no-repeat;
+}
+#reception {
+    background: url(/images/reception.png) no-repeat;
+}
+#reception:hover {
+    cursor: pointer;
+    background: url(/images/reception_u.png) no-repeat;
+}
+#weddingparty {
+    background: url(/images/weddingparty.png) no-repeat;
+}
+#weddingparty:hover {
+    cursor: pointer;
+    background: url(/images/weddingparty_u.png) no-repeat;
+}
+#registry {
+    background: url(/images/registry.png) no-repeat;
+}
+#registry:hover {
+    cursor: pointer;
+    background: url(/images/registry_u.png) no-repeat;
+}
+#guestinformation {
+    background: url(/images/guestinformation.png) no-repeat;
+}
+#guestinformation:hover {
+    cursor: pointer;
+    background: url(/images/guestinformation_u.png) no-repeat;
+}
+#photoalbum {
+    background: url(/images/photoalbum.png) no-repeat;
+}
+#photoalbum:hover {
+    cursor: pointer;
+    background: url(/images/photoalbum_u.png) no-repeat;
+}
+#guestbook {
+    background: url(/images/guestbook.png) no-repeat;
+}
+#guestbook:hover {
+    cursor: pointer;
+    background: url(/images/guestbook_u.png) no-repeat;
+}
+#honeymoon {
+    background: url(/images/honeymoon.png) no-repeat;
+}
+#honeymoon:hover {
+    cursor: pointer;
+    background: url(/images/honeymoon_u.png) no-repeat;
 }
 #subheader {
     text-align: center;
