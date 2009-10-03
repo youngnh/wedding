@@ -2,15 +2,20 @@
 
 {% block title %}Reception - Nate and Paige's Wedding{% endblock %}
 
+{% block scripttags %}
+<script type="text/javascript" src="js/prototype.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps?file=api&v=2&key=ABQIAAAAQ5-89iTkCM_4TiVH89FIxBSa14s3cBljQTLGvwxtdr0IvuqfTRScnLRBZAWaS0N0UYXLTgrYigsOHw&sensor=false"></script>
+{% endblock %}
+
 {% block style %}
 #map_canvas {
   height: 300px;
 }
 {% endblock %}
 
-{% block script %}
+{% block ondomload %}
     // populate the google maps
-    populateMap(38.6162720, -90.2116950, 14);
+    populateMap(38.6162720, -90.2116950, 14, "1415 S 18th St, St Louis, MO 63104");
 {% endblock %}
 
 {% block content %}

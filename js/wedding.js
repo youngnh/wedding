@@ -24,7 +24,7 @@ function wireUpMenu() {
     });
 }
 
-function getDirectionsInfoWindow(map) {
+function getDirectionsInfoWindow(map, dest) {
     var deep = true;
     var infoNode = $('directions_info_window').cloneNode(deep);
     infoNode.id = "";
@@ -36,13 +36,13 @@ function getDirectionsInfoWindow(map) {
     button.observe('click', function(event) {
 	var directionsDiv = $('directions_text');
 	var directions = new GDirections(map, directionsDiv);
-	directions.load(textField.value + " to 505 Fountains Pkwy, Fairview Heights, IL 62208");
+	directions.load(textField.value + " to " + dest);
     });
 
     return infoNode;
 }
 
-function populateMap(lat, lng, zoom) {
+function populateMap(lat, lng, zoom, dest) {
     if($('map_canvas')) {
 	if(GBrowserIsCompatible()) {
 	    var map = new GMap2($('map_canvas'));
@@ -52,7 +52,7 @@ function populateMap(lat, lng, zoom) {
 	    var marker = new GMarker(holyTrinityLatLng);
 	    map.addOverlay(marker);
 	    GEvent.addListener(marker, "click", function() {
-		var infoNode = getDirectionsInfoWindow(map);
+		var infoNode = getDirectionsInfoWindow(map, dest);
 		marker.openInfoWindowHtml(infoNode);
 	    });
 	}

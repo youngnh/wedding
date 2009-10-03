@@ -6,24 +6,21 @@
     <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
     <link rel="stylesheet" href="css/base.css" type="text/css"/>
     <link rel="stylesheet" href="css/lightbox.css" type="text/css"/>
-    <script type="text/javascript" src="js/prototype.js"></script>
-    <script type="text/javascript" src="js/scriptaculous.js?load=effects,builder"></script>
-    <script type="text/javascript" src="js/lightbox.js"></script>
-    <script type="text/javascript" src="http://maps.google.com/maps?file=api&v=2&key=ABQIAAAAQ5-89iTkCM_4TiVH89FIxBSa14s3cBljQTLGvwxtdr0IvuqfTRScnLRBZAWaS0N0UYXLTgrYigsOHw&sensor=false"></script>
     <script type="text/javascript" src="js/wedding.js"></script>
+    {% block scripttags %}
+    {% endblock %}
+
     <style type="text/css">
       {% block style %}
       {% endblock %}
     </style>
+
     <script type="text/javascript">
       document.observe("dom:loaded", function(event) {
       // set the text for days until the wedding
       countdown();
 
-      // setup the menu rollover/rollout underlining
-      //wireUpMenu();
-
-      {% block script %}
+      {% block ondomload %}
       {% endblock %}
 
       });
