@@ -64,7 +64,7 @@ class SignGuestbookPage(webapp.RequestHandler):
         greeting.author = self.request.get('author')
         greeting.message = self.request.get('message')
         greeting.put()
-        self.redirect('/guestbook.html')
+        self.redirect('/guestbook')
 
 class WeddingPartyPage(MainPage):
     def getPath(self):
@@ -74,19 +74,19 @@ class WelcomePage(MainPage):
     def getPath(self):
         return 'welcome.html'
 
-application = webapp.WSGIApplication([('/aboutus.html', AboutUsPage),
-                                      ('/ceremony.html', CeremonyPage),
-                                      ('/guestbook.html', GuestbookPage),
-                                      ('/guestinformation.html', GuestInformationPage),
-                                      ('/honeymoon.html', HoneymoonPage),
-                                      ('/ourproposal.html', OurProposalPage),
-                                      ('/photoalbum.html', PhotoAlbumPage),
-                                      ('/reception.html', ReceptionPage),
-                                      ('/reception.html', ReceptionPage),
-                                      ('/registry.html', RegistryPage),
+application = webapp.WSGIApplication([('/aboutus', AboutUsPage),
+                                      ('/ceremony', CeremonyPage),
+                                      ('/guestbook', GuestbookPage),
+                                      ('/guestinformation', GuestInformationPage),
+                                      ('/honeymoon', HoneymoonPage),
+                                      ('/ourproposal', OurProposalPage),
+                                      ('/photoalbum', PhotoAlbumPage),
+                                      ('/reception', ReceptionPage),
+                                      ('/reception', ReceptionPage),
+                                      ('/registry', RegistryPage),
                                       ('/signguestbook', SignGuestbookPage),
-                                      ('/weddingparty.html', WeddingPartyPage),
-                                      ('/welcome.html', WelcomePage),
+                                      ('/weddingparty', WeddingPartyPage),
+                                      ('/welcome', WelcomePage),
                                       ('/', WelcomePage)],
                                      debug=True)
 
