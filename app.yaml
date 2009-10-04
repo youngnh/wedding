@@ -13,14 +13,8 @@ handlers:
 - url: /js
   static_dir: js
 
-- url: /guestbook.html
-  script: guestbook.py
-
-- url: /signguestbook
-  script: guestbook.py
-
 - url: /(.*)
-  script: welcome.py
+  script: application.py
 
 skip_files:
 - ^(.*/)?app\.yaml
