@@ -2,24 +2,39 @@
 
 {% block title %}Guest Book - Nate and Paige's Wedding{% endblock %}
 
+{% block style %}
+#guestbookform label {
+  display: block;
+}
+#guestbookform input {
+  display: block;
+}
+#guestbookform textarea {
+  display: block;
+}
+div.fromsignature {
+  text-align: right;
+}
+{% endblock %}
+
 {% block content %}
 <h3>Guest book</h3>
 
-<form action="/signguestbook" method="post">
+<form id="guestbookform" action="/signguestbook" method="post">
   <label>Your name:</label>
-  <input name="author" type="text" maxlength="64" style="display: block;"/>
-  <label style="display: block;">Message:</label>
-  <textarea name="message" rows="5" cols="40" style="display: block;"></textarea>
+  <input name="author" type="text" maxlength="64"/>
+  <label>Message:</label>
+  <textarea name="message" rows="5" cols="40"></textarea>
   <input type="image" class="button" src="images/btnSubmitGeneric.gif" alt="Submit"/>
 </form>
 
 <hr class="prepend-top"/>
 {% for greeting in greetings %}
 <div class="span-14 last">
-  <div id="span-14 last">
+  <div class="span-14 last">
     {{ greeting.message|escape }}
   </div>
-  <div class="span-14 last" style="text-align: right;">
+  <div class="fromsignature span-14 last">
     from:
     <span>
       {{ greeting.author|escape }}

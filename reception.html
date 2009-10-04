@@ -11,6 +11,9 @@
 #map_canvas {
   height: 300px;
 }
+#directions_info_window { 
+  display: none;
+}
 {% endblock %}
 
 {% block ondomload %}
@@ -57,7 +60,7 @@
     <div id="map_canvas" class="span-10"></div>
     <div id="directions_text" class="span-3 last"></div>
   </p>
-  <div id="directions_info_window" style="display: none">
+  <div id="directions_info_window">
     <p>
       <b>Sqwires</b>
     </p>
