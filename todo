@@ -1,0 +1,5 @@
+10. use the right timezone when inserting and displaying dates in the guestbook 
+12. add attribution link to the design
+13. 404 page
+14. design doesn't work in IE6, whatever
+    countdown javascript doesn't work in IE8 (problem)
