@@ -1,5 +1,6 @@
 body {
-    background: #E1FFBB url(/images/tree.png) no-repeat;    
+    background: #E1FFBB url(/images/tree.png) no-repeat;
+    background-position: top center;
 }
 
 /** Subheader Styling **/
