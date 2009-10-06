@@ -2,6 +2,9 @@ body {
     background: #E1FFBB url(/images/tree.png) no-repeat;
     background-position: top center;
 }
+.container {
+    height: 800px;
+}
 
 /** Subheader Styling **/
 #subheader {
@@ -97,4 +100,10 @@ body {
 }
 #honeymoon:hover {
     background: url(/images/honeymoon_u.png) no-repeat;
+}
+
+/** footer **/
+#footer {
+    bottom: 0;
+    text-align: center;
 }
