@@ -30,9 +30,8 @@ class GuestbookPage(webapp.RequestHandler):
         greetings_query = Greeting.all().order('-date')
         greetings = greetings_query.fetch(50)
         for greeting in greetings:
-            date = greeting.date
-            adjusted_date = datetime(date.year, date.month, date.day, date.hour, date.minute, date.second, tzinfo=utc)
-            greeting.date = adjusted_date.astimezone(Central)
+            utc_date = greeting.date.replace(tzinfo=utc)
+            greeting.date = utc_date.astimezone(Central)
 
         template_values = { 'greetings': greetings }
 
