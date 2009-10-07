@@ -1,3 +1,17 @@
 13. 404 page
 14. design doesn't work in IE6, whatever
     countdown javascript doesn't work in IE8 (problem)
+15. thank you page with a family tree done in the giving tree style, which pictures and hovering thankyou notes
+16. move code to jQuery instead of prototype
+17. form validation and auto-suggest for guestbook (spelling corrector?)
+18. move images in photo album into database
+    create a photo submission page
+      should be unlinked-to /photoadmin
+      should have to login to google accounts
+      gives you an upload box
+19. move page content to database with markup language (markdown, textile, mediawiki)
+20. move all photos into database
+21. guestbook pagination, use good RESTful urls
+22. calendar page
+    - allow users to mark when they plan on arriving
+    - show dates of big events, times and schedules
