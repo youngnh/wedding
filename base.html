@@ -5,9 +5,7 @@
     <link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print"/>
     <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
     <link rel="stylesheet" href="css/base.css" type="text/css"/>
-    <link rel="stylesheet" href="css/lightbox.css" type="text/css"/>
-    <script type="text/javascript" src="js/wedding.js"></script>
-    <script type="text/javascript" src="js/prototype.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
     {% block scripttags %}
     {% endblock %}
 
@@ -17,9 +15,7 @@
     </style>
 
     <script type="text/javascript">
-      document.observe("dom:loaded", function(event) {
-      // set the text for days until the wedding
-      countdown();
+      $(document).ready(function() {
 
       {% block ondomload %}
       {% endblock %}
