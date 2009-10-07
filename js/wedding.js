@@ -26,7 +26,7 @@ function wireUpMenu() {
 
 function populateMap(lat, lng, zoom, dest) {
     $('#directions_button').click(function() {
-	$('#map_canvas, #directions_show').directions($('#directions_text').text() + " to " + dest);
+	$('#map_canvas, #directions_show').directions($('#directions_text').text(), dest);
     });						      
     
     var holyTrinityLatLng = new GLatLng(lat, lng);    
