@@ -24,32 +24,17 @@ function wireUpMenu() {
     });
 }
 
-function getDirectionsInfoWindow(map, dest) {
-    var deep = true;
-    var infoNode = $('directions_info_window').cloneNode(deep);
-    infoNode.id = "";
-    infoNode.show();
-
-    var inputs = infoNode.select('input');
-    var textField = inputs[0];
-    var button = inputs[1];
-    button.observe('click', function(event) {
-	var directionsDiv = $('directions_text');
-	var directions = new GDirections(map, directionsDiv);
-	directions.load(textField.value + " to " + dest);
-    });
-
-    return infoNode;
-}
-
 function populateMap(lat, lng, zoom, dest) {
+    $('#directions_button').click(function() {
+	$('#map_canvas, #directions_show').directions($('#directions_text').text() + " to " + dest);
+    });						      
+    
     var holyTrinityLatLng = new GLatLng(lat, lng);    
     $('#map_canvas').gmap2({center: holyTrinityLatLng,
 			    zoom: zoom});
-    var marker = new GMarker(holyTrinityLatLng);
-    $('#map_canvas').addOverlay(marker);
-    marker.click(function() {
-	var infoNode = getDirectionsInfoWindow(map, dest);
-	marker.openInfoWindowHtml(infoNode);
-    });
+    $('#map_canvas').addMarker(new GMarker(holyTrinityLatLng), 
+			       { click: function() {
+				   var deep = true;
+				   $('#directions_info_window').clone(deep).show().openAsInfoWindow(this);
+			       }});
 }

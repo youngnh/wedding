@@ -1,29 +1,10 @@
-{% extends "base.html" %}
+{% extends "directions.html" %}
 
 {% block title %}Ceremony - Nate and Paige's Wedding{% endblock %}
 
-{% block scripttags %}
-<script type="text/javascript" src="http://maps.google.com/maps?file=api&v=2&key=ABQIAAAAQ5-89iTkCM_4TiVH89FIxBSa14s3cBljQTLGvwxtdr0IvuqfTRScnLRBZAWaS0N0UYXLTgrYigsOHw&sensor=false"></script>
-{% endblock %}
+{% block map 38.6040590, -89.9752430, 13, "505 Fountains Pkwy, Fairview Heights, IL 62208" %}
 
-{% block style %}
-#ceremony {
-  background: url(/images/ceremony_u.png) no-repeat;
-}
-#map_canvas {
-  height: 300px;
-}
-#directions_info_window {
-  display: none;
-}
-{% endblock %}
-
-{% block ondomload %}
-    // populate the google maps
-    populateMap(38.6040590, -89.9752430, 13, "505 Fountains Pkwy, Fairview Heights, IL 62208");
-{% endblock %}
-
-{% block content %}
+{% block topcontent %}
 <div class="span-14 push-3 last">
   <img src="images/ChurchInt_Sanctuary.JPG"/>
 </div>
@@ -39,24 +20,5 @@
   <p>
     <a href="http://www.holytrinityil.org/">Holy Trinity Catholic Church Website</a>
   </p>
-</div>
-
-<div class="span-14 append-bottom last">
-  <h3>Directions</h3>
-  <p>
-    Click on the marker in the map below for directions.
-    <div id="map_canvas" class="span-10"></div>
-    <div id="directions_text" class="span-3 last"></div>
-  </p>
-  <div id="directions_info_window">
-    <p>
-      <b>Holy Trinity Catholic Church</b>
-    </p>
-    <p>
-      Get directions to here:
-      <br/>
-      <input type="text"/><input type="submit" value="Go"/>
-    </p>
-  </div>
 </div>
 {% endblock %}
