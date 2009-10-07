@@ -43,18 +43,13 @@ function getDirectionsInfoWindow(map, dest) {
 }
 
 function populateMap(lat, lng, zoom, dest) {
-    if($('map_canvas')) {
-	if(GBrowserIsCompatible()) {
-	    var map = new GMap2($('map_canvas'));
-	    var holyTrinityLatLng = new GLatLng(lat, lng);
-	    map.setCenter(holyTrinityLatLng, zoom);
-	    map.setUIToDefault();
-	    var marker = new GMarker(holyTrinityLatLng);
-	    map.addOverlay(marker);
-	    GEvent.addListener(marker, "click", function() {
-		var infoNode = getDirectionsInfoWindow(map, dest);
-		marker.openInfoWindowHtml(infoNode);
-	    });
-	}
-    }
+    var holyTrinityLatLng = new GLatLng(lat, lng);    
+    $('#map_canvas').gmap2({center: holyTrinityLatLng,
+			    zoom: zoom});
+    var marker = new GMarker(holyTrinityLatLng);
+    $('#map_canvas').addOverlay(marker);
+    marker.click(function() {
+	var infoNode = getDirectionsInfoWindow(map, dest);
+	marker.openInfoWindowHtml(infoNode);
+    });
 }
