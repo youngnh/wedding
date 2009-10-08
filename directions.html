@@ -2,6 +2,7 @@
 
 {% block scripttags %}
 <script type="text/javascript" src="http://maps.google.com/maps?file=api&v=2&key=ABQIAAAAQ5-89iTkCM_4TiVH89FIxBSa14s3cBljQTLGvwxtdr0IvuqfTRScnLRBZAWaS0N0UYXLTgrYigsOHw&sensor=false"></script>
+<script type="text/javascript" src="js/jquery.googlemaps.js"></script>
 {% endblock %}
 
 {% block style %}
@@ -14,11 +15,6 @@
 #directions_info_window { 
   display: none;
 }
-{% endblock %}
-
-{% block map %}
-    // populate the google maps
-    populateMap(lat, lng, zoom, dest);
 {% endblock %}
 
 {% block content %}

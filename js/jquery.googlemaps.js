@@ -19,8 +19,14 @@ jQuery.fn.addMarker = function(marker, options) {
     });
 };
 
+jQuery.fn.openAsInfoWindow = function(marker) {
+    return this.each(function() {
+	marker.openInfoWindowHtml(this);
+    });
+};
+
 jQuery.fn.directions = function(from, to) {
-    var map = getMap(this[0]);
+    var map = this[0].getMap();
     var show = this[1];
     var directions = new GDirections(map, show); // should probably do a call() or apply() here
     directions.load(from + " to " + to);
