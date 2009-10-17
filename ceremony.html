@@ -2,6 +2,12 @@
 
 {% block title %}Ceremony - Nate and Paige's Wedding{% endblock %}
 
+{% block style %}
+#ceremony {
+  background: url(/images/ceremony_u.png) no-repeat;
+}
+{% endblock %}
+
 {% block ondomload %}
 populateMap(38.6040590, -89.9752430, 13, "505 Fountains Pkwy, Fairview Heights, IL 62208");
 {% endblock %}
