@@ -10,11 +10,11 @@ function menuRollout(event) {
 
 function countdown() {
     var today = new Date().getTime();
-    var bigDay = new Date($('big_day').textContent).getTime();
+    var bigDay = new Date($('#big_day').text()).getTime();
 
     var daysToGo = Math.ceil(((((bigDay - today) / 1000) / 60) / 60) / 24);
 
-    $('days_to_go').update(daysToGo + " days to go!");
+    $('#days_to_go').replaceWith(daysToGo + " days to go!");
 }
 
 function wireUpMenu() {
@@ -24,37 +24,18 @@ function wireUpMenu() {
     });
 }
 
-function getDirectionsInfoWindow(map, dest) {
-    var deep = true;
-    var infoNode = $('directions_info_window').cloneNode(deep);
-    infoNode.id = "";
-    infoNode.show();
-
-    var inputs = infoNode.select('input');
-    var textField = inputs[0];
-    var button = inputs[1];
-    button.observe('click', function(event) {
-	var directionsDiv = $('directions_text');
-	var directions = new GDirections(map, directionsDiv);
-	directions.load(textField.value + " to " + dest);
-    });
-
-    return infoNode;
-}
-
 function populateMap(lat, lng, zoom, dest) {
-    if($('map_canvas')) {
-	if(GBrowserIsCompatible()) {
-	    var map = new GMap2($('map_canvas'));
-	    var holyTrinityLatLng = new GLatLng(lat, lng);
-	    map.setCenter(holyTrinityLatLng, zoom);
-	    map.setUIToDefault();
-	    var marker = new GMarker(holyTrinityLatLng);
-	    map.addOverlay(marker);
-	    GEvent.addListener(marker, "click", function() {
-		var infoNode = getDirectionsInfoWindow(map, dest);
-		marker.openInfoWindowHtml(infoNode);
-	    });
-	}
-    }
+    $('#directions_button').click(function(event) {
+	var from = $(event.target).prev().val();
+	$('#map_canvas, #directions_show').directions(from, dest);
+    });						      
+    
+    var holyTrinityLatLng = new GLatLng(lat, lng);    
+    $('#map_canvas').gmap2({center: holyTrinityLatLng,
+			    zoom: zoom});
+    $('#map_canvas').addMarker(new GMarker(holyTrinityLatLng), 
+			       { click: function() {
+				   var deep = true;
+				   $('#directions_info_window').clone(deep).show().openAsInfoWindow(this);
+			       }});
 }

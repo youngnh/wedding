@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block scripttags %}
+<script type="text/javascript" src="http://maps.google.com/maps?file=api&v=2&key=ABQIAAAAQ5-89iTkCM_4TiVH89FIxBSa14s3cBljQTLGvwxtdr0IvuqfTRScnLRBZAWaS0N0UYXLTgrYigsOHw&sensor=false"></script>
+<script type="text/javascript" src="js/jquery.googlemaps.js"></script>
+{% endblock %}
+
+{% block style %}
+#map_canvas {
+  height: 300px;
+}
+#directions_info_window { 
+  display: none;
+}
+{% block pagestyle %}
+{% endblock %}
+{% endblock %}
+
+{% block content %}
+
+{% block topcontent%}
+{% endblock %}
+
+<div class="span-14 append-bottom last">
+  <h3>Directions</h3>
+  <p>
+    Click on the marker in the map below for directions.
+    <div id="map_canvas" class="span-10"></div>
+    <div id="directions_show" class="span-3 last"></div>
+  </p>
+  <div id="directions_info_window">
+    <p>
+      <b>Sqwires</b>
+    </p>
+    <p>
+      Get directions to here:
+      <br/>
+      <input id="directions_text" type="text"/><input id="directions_button" type="submit" value="Go"/>
+    </p>
+  </div>
+</div>
+{% endblock %}
