@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Photos - Nate and Paige's Wedding{% endblock %}
+
+{% block ondomload %}
+$('select').change(function(event) {
+    if(this.selectedIndex == (this.length - 1)) {
+        $('select').hide();
+        $("input.hidden").show().focus();
+    }
+});
+{% endblock %}
+
+{% block style %}
+#photoalbum {
+  background: url(/images/photoalbum_u.png) no-repeat;
+}
+#uploadform label {
+  display: block;
+}
+#uploadform input {
+  display: block;
+}
+#uploadform input.hidden {
+  display: none;
+}
+{% endblock %}
+
+{% block content %}
+<h3>Upload photos for the photo album</h3>
+
+<form id="uploadform" action="/photoalbum/uploadphoto" method="POST">
+  <label>File:</label>
+  <input type="file" name="file"/>
+  <label>Title:</label>
+  <input type="text" name="title"/>
+  <label>Section:</label>
+  <select name="section">
+    <option value="Paige and Nate">Paige and Nate</option>
+    <option value="Chicago Trip - October">Chicago Trip - October</option>
+    <option>Create new section...</option>
+  </select>
+  <input class="hidden" type="text" name="newsection"/>
+  <input type="image" class="button" src="/images/btnUploadGeneric.gif" alt="Upload"/>
+</form>
+
+{% endblock %}

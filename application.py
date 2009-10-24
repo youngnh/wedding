@@ -54,6 +54,10 @@ class PhotoAlbumPage(MainPage):
     def getPath(self):
         return 'photoalbum.html'
 
+class UploadPhotoPage(MainPage):
+    def getPath(self):
+        return 'uploadphoto.html'
+
 class ReceptionPage(MainPage):
     def getPath(self):
         return 'reception.html'
@@ -86,6 +90,7 @@ application = webapp.WSGIApplication([('/aboutus', AboutUsPage),
                                       ('/honeymoon', HoneymoonPage),
                                       ('/ourproposal', OurProposalPage),
                                       ('/photoalbum', PhotoAlbumPage),
+                                      ('/photoalbum/upload', UploadPhotoPage),
                                       ('/reception', ReceptionPage),
                                       ('/reception', ReceptionPage),
                                       ('/registry', RegistryPage),
