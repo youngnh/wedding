@@ -50,13 +50,40 @@ class OurProposalPage(MainPage):
     def getPath(self):
         return 'ourproposal.html'
 
-class PhotoAlbumPage(MainPage):
-    def getPath(self):
-        return 'photoalbum.html'
+class Photo(db.Model):
+    img = db.BlobProperty()
+    title = db.StringProperty()
 
-class UploadPhotoPage(MainPage):
+class DisplayImage(webapp.RequestHandler):
+    def get(self, id):
+        photo = Photo.get_by_id(int(id))
+        self.response.headers.add_header("Content-Type", "image/jpeg")
+        self.response.out.write(photo.img)
+
+class PhotoAlbumPage(webapp.RequestHandler):
+    def get(self):
+        photos_query = Photo.all()
+        photos = photos_query.fetch(50)
+        for photo in photos:
+            photo.src = photo.key().id()
+
+        template_values = { 'photos': photos }
+
+        path = os.path.join(os.path.dirname(__file__), 'photoalbum.html')
+        self.response.out.write(template.render(path, template_values))
+
+class ManagePhotoAlbumPage(MainPage):
     def getPath(self):
         return 'uploadphoto.html'
+
+class UploadPhotoPage(webapp.RequestHandler):
+    def post(self):
+        photo = Photo()
+
+        photo.img = self.request.get('file')
+        photo.title = self.request.get('title')
+        photo.put()
+        self.redirect('/photoalbum/manage')
 
 class ReceptionPage(MainPage):
     def getPath(self):
@@ -90,7 +117,9 @@ application = webapp.WSGIApplication([('/aboutus', AboutUsPage),
                                       ('/honeymoon', HoneymoonPage),
                                       ('/ourproposal', OurProposalPage),
                                       ('/photoalbum', PhotoAlbumPage),
+                                      ('/photoalbum/manage', ManagePhotoAlbumPage),
                                       ('/photoalbum/upload', UploadPhotoPage),
+                                      ('/photoalbum/images/(.*)', DisplayImage),
                                       ('/reception', ReceptionPage),
                                       ('/reception', ReceptionPage),
                                       ('/registry', RegistryPage),
