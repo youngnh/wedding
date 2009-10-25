@@ -13,6 +13,13 @@
     <style type="text/css">
       {% block style %}
       {% endblock %}
+      {% if signed_in %}
+      #logout {
+        position: relative;
+        top: -6em;
+        left: 300px;
+      }
+      {% endif %}
     </style>
 
     <script type="text/javascript">
@@ -47,6 +54,9 @@
 	</div>
 	<div id="subheader2">
 	  <h4><span id="big_day">June 12, 2010</span> - <span id="days_to_go"></span></h4>
+	  {% if signed_in %}
+	  <a id="logout" href="{{ logout_url }}">Sign Out</a>
+	  {% endif %}
 	</div>
       </div>
       <div id="left" class="span-5">

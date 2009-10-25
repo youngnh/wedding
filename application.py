@@ -1,6 +1,7 @@
 import os
 
 from google.appengine.api import images
+from google.appengine.api import users
 
 from google.appengine.ext import db
 from google.appengine.ext import webapp
@@ -9,10 +10,34 @@ from google.appengine.ext.webapp.util import run_wsgi_app
 from datetime import datetime
 from ustimezones import Central, utc
 
+authorized = ["paige2987", "youngnh"]
+
 class MainPage(webapp.RequestHandler):
     def get(self):
         path = os.path.join(os.path.dirname(__file__), self.getPath())
         self.response.out.write(template.render(path, {}))
+
+class AuthPage(webapp.RequestHandler):
+    def checkAuth(self):
+        user = users.get_current_user()
+
+        if not user:
+            self.redirect(users.create_login_url(self.request.uri))
+            return False
+
+        if user.nickname() not in authorized:
+            self.redirect('/welcome')
+            return False
+
+        return True
+
+    def get(self):
+        if self.checkAuth():
+            self.doGet()
+
+    def post(self):
+        if self.checkAuth():
+            self.doPost()
 
 class AboutUsPage(MainPage):
     def getPath(self):
@@ -105,12 +130,13 @@ class PhotoAlbumPage(webapp.RequestHandler):
         path = os.path.join(os.path.dirname(__file__), 'photoalbum.html')
         self.response.out.write(template.render(path, template_values))
 
-class ManagePhotoAlbumPage(MainPage):
-    def getPath(self):
-        return 'uploadphoto.html'
+class ManagePhotoAlbumPage(AuthPage):
+    def doGet(self):
+        path = os.path.join(os.path.dirname(__file__), 'uploadphoto.html')
+        self.response.out.write(template.render(path, {}))
 
-class UploadPhotoPage(webapp.RequestHandler):
-    def post(self):
+class UploadPhotoPage(AuthPage):
+    def doPost(self):
         photo = Photo()
 
         photo.img = self.request.get('file')
@@ -150,7 +176,18 @@ class WeddingPartyPage(MainPage):
     def getPath(self):
         return 'weddingparty.html'
 
-class WelcomePage(MainPage):
+class WelcomePage(webapp.RequestHandler):
+    def get(self):
+        user = users.get_current_user()
+        if user:
+            template_values = { 'signed_in': True,
+                                'logout_url': users.create_logout_url(self.request.uri) }
+        else:
+            template_values = {}
+
+        path = os.path.join(os.path.dirname(__file__), self.getPath())
+        self.response.out.write(template.render(path, template_values))
+
     def getPath(self):
         return 'welcome.html'
 
