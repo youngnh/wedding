@@ -18,9 +18,10 @@ $('a[@rel=lightbox]').lightBox();
 {% endblock %}
 
 {% block content %}
-<h3>Paige and Nate</h3>
+{% for section in sections %}
+<h3>{{ section.name|escape }}</h3>
 <table>
-  {% for photos in rows %}
+  {% for photos in section.rows %}
   <tr>
     {% for photo in photos %}
     <td>
@@ -32,4 +33,5 @@ $('a[@rel=lightbox]').lightBox();
   </tr>
   {% endfor %}
 </table>
+{% endfor %}
 {% endblock %}

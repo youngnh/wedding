@@ -22,10 +22,11 @@
 
 <form id="uploadform" action="/photoalbum/upload" method="POST" enctype="multipart/form-data">
   <label>File:</label>
-  <input type="file" name="file"/>
+  <input name="file" type="file"/>
   <label>Title:</label>
-  <textarea name="title" rows="3" cols="30">
-  </textarea>
+  <textarea name="title" rows="3" cols="30"></textarea>
+  <label>Section:</label>
+  <input name="section" type="text"/>
   <input type="image" class="button" src="/images/btnUploadGeneric.gif" alt="Upload"/>
 </form>
 

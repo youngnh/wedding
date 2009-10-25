@@ -78,16 +78,29 @@ def group(lst, n):
         val = lst[i:i+n]
         yield val
 
-class PhotoAlbumPage(webapp.RequestHandler):
-    def get(self):
-        photos_query = Photo.all()
-        photos = photos_query.fetch(50)
+class Section(db.Model):
+    photos = db.ListProperty(db.Key)
+    name = db.StringProperty()
+    created = db.DateTimeProperty(auto_now_add=True)
+
+    def __getattr__(self, attrname):
+        if attrname == "rows":
+            return self._rows()
+
+    def _rows(self):
+        photos = Photo.get(self.photos)
         for photo in photos:
             photo.src = photo.key().id()
 
         rows = list(group(photos, 4))
+        return rows
 
-        template_values = { 'rows': rows }
+class PhotoAlbumPage(webapp.RequestHandler):
+    def get(self):
+        sections_query = Section.all().order('created')
+        sections = sections_query.fetch(50)
+
+        template_values = { 'sections': sections }
 
         path = os.path.join(os.path.dirname(__file__), 'photoalbum.html')
         self.response.out.write(template.render(path, template_values))
@@ -103,6 +116,17 @@ class UploadPhotoPage(webapp.RequestHandler):
         photo.img = self.request.get('file')
         photo.title = self.request.get('title')
         photo.put()
+
+        # decide if we have to create a new section
+        section_name = self.request.get('section')
+        section = Section.get_by_key_name(section_name)
+        if not section:
+            section = Section(key_name=section_name, name=section_name)
+
+        # add photo to the section, and save
+        section.photos.append(photo.key())
+        section.put()
+
         self.redirect('/photoalbum/manage')
 
 class ReceptionPage(MainPage):
