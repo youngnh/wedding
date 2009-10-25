@@ -1,5 +1,7 @@
 import os
 
+from google.appengine.api import images
+
 from google.appengine.ext import db
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import template
@@ -59,6 +61,17 @@ class DisplayImage(webapp.RequestHandler):
         photo = Photo.get_by_id(int(id))
         self.response.headers.add_header("Content-Type", "image/jpeg")
         self.response.out.write(photo.img)
+
+class DisplayThumb(webapp.RequestHandler):
+    def get(self, id):
+        photo = Photo.get_by_id(int(id))
+        img = images.Image(photo.img)
+        img.resize(int(img.width * 0.3), int(img.height * 0.3))
+        img.im_feeling_lucky()
+        thumbnail = img.execute_transforms(output_encoding=images.JPEG)
+
+        self.response.headers.add_header("Content-Type", "image/jpeg")
+        self.response.out.write(thumbnail)
 
 class PhotoAlbumPage(webapp.RequestHandler):
     def get(self):
@@ -120,6 +133,7 @@ application = webapp.WSGIApplication([('/aboutus', AboutUsPage),
                                       ('/photoalbum/manage', ManagePhotoAlbumPage),
                                       ('/photoalbum/upload', UploadPhotoPage),
                                       ('/photoalbum/images/(.*)', DisplayImage),
+                                      ('/photoalbum/thumbs/(.*)', DisplayThumb),
                                       ('/reception', ReceptionPage),
                                       ('/reception', ReceptionPage),
                                       ('/registry', RegistryPage),
