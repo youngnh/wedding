@@ -12,6 +12,9 @@
 #uploadform input {
   display: block;
 }
+#uploadform textarea {
+  height: 100;
+}
 {% endblock %}
 
 {% block content %}
@@ -21,7 +24,8 @@
   <label>File:</label>
   <input type="file" name="file"/>
   <label>Title:</label>
-  <input type="text" name="title"/>
+  <textarea name="title" rows="3" cols="30">
+  </textarea>
   <input type="image" class="button" src="/images/btnUploadGeneric.gif" alt="Upload"/>
 </form>
 

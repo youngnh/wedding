@@ -73,6 +73,11 @@ class DisplayThumb(webapp.RequestHandler):
         self.response.headers.add_header("Content-Type", "image/jpeg")
         self.response.out.write(thumbnail)
 
+def group(lst, n):
+    for i in range(0, len(lst), n):
+        val = lst[i:i+n]
+        yield val
+
 class PhotoAlbumPage(webapp.RequestHandler):
     def get(self):
         photos_query = Photo.all()
@@ -80,7 +85,9 @@ class PhotoAlbumPage(webapp.RequestHandler):
         for photo in photos:
             photo.src = photo.key().id()
 
-        template_values = { 'photos': photos }
+        rows = list(group(photos, 4))
+
+        template_values = { 'rows': rows }
 
         path = os.path.join(os.path.dirname(__file__), 'photoalbum.html')
         self.response.out.write(template.render(path, template_values))

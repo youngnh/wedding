@@ -20,13 +20,15 @@ $('a[@rel=lightbox]').lightBox();
 {% block content %}
 <h3>Paige and Nate</h3>
 <table>
-  {% for photo in photos %}
+  {% for photos in rows %}
   <tr>
+    {% for photo in photos %}
     <td>
       <a href="/photoalbum/images/{{ photo.src }}" rel="lightbox" title="{{ photo.title|escape }}">
 	<img src="/photoalbum/thumbs/{{ photo.src }}" align="absmiddle"/>
       </a>
     </td>
+    {% endfor %}
   </tr>
   {% endfor %}
 </table>
