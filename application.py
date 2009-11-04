@@ -22,7 +22,7 @@ class CeremonyPage(MainPage):
 
 class Greeting(db.Model):
     author = db.StringProperty()
-    message = db.StringProperty(multiline=True)
+    message = db.TextProperty()
     date = db.DateTimeProperty(auto_now_add=True)
 
 class GuestbookPage(webapp.RequestHandler):
