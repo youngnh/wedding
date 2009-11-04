@@ -35,7 +35,7 @@ div.fromsignature {
 {% for greeting in greetings %}
 <div class="span-14 last">
   <div class="span-14 last">
-    {{ greeting.message|escape }}
+    {{ greeting.message|escape|linebreaks }}
   </div>
   <div class="fromsignature span-14 last">
     from:
