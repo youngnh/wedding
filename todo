@@ -16,3 +16,6 @@
     - show dates of big events, times and schedules
 24. giving tree favicon
 26. Poor, poor error handling pages! You displayed a stack trace to the user! For shame.
+27. do some user statistics tracking, it seems to be what Mrs. F and co. are most interested in.  maybe display a small js header asking who you are so
+    that those stats can display some names beside the numbers...or maybe I just need to check out the logs a bit better and write a program to download
+    and parse through them...
