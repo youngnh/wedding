@@ -1,5 +1,5 @@
 application: nateandpaigeswedding
-version: 2
+version: 4
 runtime: python
 api_version: 1
 
@@ -33,3 +33,4 @@ skip_files:
 - ^(.*/)?.*/css/blueprint/src/.*
 - ^(.*/)?.*/images/gimp/.*
 - todo
+- ^(.*/).*test.py
