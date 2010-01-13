@@ -1,4 +1,5 @@
 import os
+import spam
 
 from google.appengine.ext import db
 from google.appengine.ext import webapp
@@ -24,6 +25,9 @@ class Greeting(db.Model):
     author = db.StringProperty()
     message = db.TextProperty()
     date = db.DateTimeProperty(auto_now_add=True)
+
+class SpamGreeting(Greeting):
+    pass
 
 class GuestbookPage(webapp.RequestHandler):
     def get(self):
@@ -71,7 +75,11 @@ class SignGuestbookPage(webapp.RequestHandler):
         self.redirect('/guestbook')
 
 def getMessageModel(author, message):
-    greeting = Greeting()
+    if spam.isSpam(message):
+        greeting = SpamGreeting()
+    else:
+        greeting = Greeting()
+
     greeting.author = author
     greeting.message = message
     return greeting
