@@ -64,12 +64,17 @@ class RegistryPage(MainPage):
 
 class SignGuestbookPage(webapp.RequestHandler):
     def post(self):
-        greeting = Greeting()
-
-        greeting.author = self.request.get('author')
-        greeting.message = self.request.get('message')
-        greeting.put()
+        author = self.request.get('author')
+        message = self.request.get('message')
+        message = getMessageModel(author, message)
+        message.put()
         self.redirect('/guestbook')
+
+def getMessageModel(author, message):
+    greeting = Greeting()
+    greeting.author = author
+    greeting.message = message
+    return greeting
 
 class WeddingPartyPage(MainPage):
     def getPath(self):
