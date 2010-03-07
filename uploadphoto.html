@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Photos - Nate and Paige's Wedding{% endblock %}
+
+{% block style %}
+#photoalbum {
+  background: url(/images/photoalbum_u.png) no-repeat;
+}
+#uploadform label {
+  display: block;
+}
+#uploadform input {
+  display: block;
+}
+#uploadform textarea {
+  height: 100;
+}
+{% endblock %}
+
+{% block content %}
+<h3>Upload photos for the photo album</h3>
+
+<form id="uploadform" action="/photoalbum/upload" method="POST" enctype="multipart/form-data">
+  <label>File:</label>
+  <input name="file" type="file"/>
+  <label>Title:</label>
+  <textarea name="title" rows="3" cols="30"></textarea>
+  <label>Section:</label>
+  <input name="section" type="text"/>
+  <input type="image" class="button" src="/images/btnUploadGeneric.gif" alt="Upload"/>
+</form>
+
+{% endblock %}
