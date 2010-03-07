@@ -84,7 +84,7 @@ class Photo(db.Model):
 class DisplayImage(webapp.RequestHandler):
     def get(self, id):
         photo = Photo.get_by_id(int(id))
-        self.response.headers.add_header("Content-Type", "image/jpeg")
+        self.response.headers["Content-Type"] = "image/jpeg"
         self.response.out.write(photo.img)
 
 class DisplayThumb(webapp.RequestHandler):
@@ -95,7 +95,7 @@ class DisplayThumb(webapp.RequestHandler):
         img.im_feeling_lucky()
         thumbnail = img.execute_transforms(output_encoding=images.JPEG)
 
-        self.response.headers.add_header("Content-Type", "image/jpeg")
+        self.response.headers["Content-Type"] = "image/jpeg"
         self.response.out.write(thumbnail)
 
 def group(lst, n):
