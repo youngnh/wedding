@@ -23,14 +23,6 @@ div.fromsignature {
 {% block content %}
 <h3>Guest book</h3>
 
-<form id="guestbookform" action="/signguestbook" method="post">
-  <label>Your name:</label>
-  <input name="author" type="text" maxlength="64"/>
-  <label>Message:</label>
-  <textarea name="message" rows="5" cols="40"></textarea>
-  <input type="image" class="button" src="/images/btnSubmitGeneric.gif" alt="Submit"/>
-</form>
-
 <hr class="prepend-top"/>
 {% for greeting in greetings %}
 <div class="span-14 last">
