@@ -14,7 +14,13 @@ function countdown() {
 
     var daysToGo = Math.ceil(((((bigDay - today) / 1000) / 60) / 60) / 24);
 
-    $('#days_to_go').replaceWith(daysToGo + " days to go!");
+    if(daysToGo < 0) {
+      $('#days_to_go').replaceWith(daysToGo + " days to go!");
+    } else if(daysToGo == 0) {
+      $('#days_to_go').replaceWith("It's the big day!");
+    } else {
+      $('#days_to_go').replaceWith("Happily married for " + (daysToGo * -1) + " days!");
+    }
 }
 
 function wireUpMenu() {
